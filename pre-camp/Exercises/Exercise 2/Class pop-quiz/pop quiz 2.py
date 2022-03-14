@@ -41,7 +41,7 @@ def checker(list1, list2):
         if len(ultimate_lists[j]) == 0:
             ultimate_lists.pop(j)
     return ultimate_lists
-
+    
 num_list1 = [1, 3, 8, 12, 24, 2, 15, 16, 21, 3, 4, 67]
 num_list2 = [1, 8, 9, 21, 2, 16, 17, 7, 28, 67]
 first_list = list_checker(num_list1)
