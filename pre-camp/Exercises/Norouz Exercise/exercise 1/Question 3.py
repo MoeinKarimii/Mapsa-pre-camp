@@ -1,8 +1,7 @@
 string_list = list(input())
 break_count = 0
 if string_list.count("?") == len(string_list):
-    print(False)
-    break_count +=1 
+    print(True)
 for i in range(len(string_list)):
     if string_list[i] == "?":
         j = i
@@ -31,6 +30,7 @@ for i in range(len(string_list)):
         elif (counter % 2 != 0 and string_list[i-1] != string_list[j]) or (counter % 2 == 0 and string_list[i-1] == string_list[j]):
             print(False)
             break_count += 1
+            break
         elif (counter % 2 == 0 and string_list[i-1] != string_list[j]) or (counter % 2 != 0 and string_list[i-1] == string_list[j]):
             check = i
             while check < j:
@@ -39,6 +39,11 @@ for i in range(len(string_list)):
                 elif string_list[check-1] == "0":
                     string_list[check] = "1"
                 check +=1
+for i in range(1, len(string_list)):
+    if string_list[i] == string_list[i-1]:
+        print(False)
+        break_count += 1
+        break
 if break_count == 0:
     print(True)
     print(" ".join(string_list))

@@ -3,8 +3,7 @@ while True:
     num_list = list(input())
     counter = 0
     for i in range(len(num_list)):
-        num_list.insert(i, int(num_list[i]))
-        num_list.pop(i+1)
+        num_list[i] = int(num_list[i])
     orgin_list = num_list.copy()
     for i in range(1, len(num_list)-1):
         while num_list[i] > num_list[i-1] and num_list[i] > num_list[i+1]:
