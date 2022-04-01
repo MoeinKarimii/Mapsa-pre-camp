@@ -31,24 +31,14 @@ class Account:
             self.email = email
         else:
             raise Exception("invalid email")
-        result = Site.Site.register(self.username, self.password, self.phone_number, self.email)
-    def __str__(self):
-        return result
-
+    @staticmethod
     def log_in(password, username=None, email=None):
         if username != None and email != None and password != None:
-            return Site.Site.login({"password": password, "username": username, "email": email})
+            return ({"password": password, "username": username, "email": email})
 
         elif password != None and username != None and email == None:
             if "@" in username:
                 email = username
-                return Site.Site.login({"password": password, "email": email})
+                return ({"password": password, "email": email})
             else:
-                return Site.Site.login({"password": password, "username": username})
-        else:
-            return "invalid login"
-
-        
-
-    def log_out(self):
-        return Site.Site.logout(self.username)
+                return ({"password": password, "username": username})
