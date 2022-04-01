@@ -11,7 +11,7 @@ class Account:
         else:
             raise Exception("invalid username")
 
-        pattern = ""
+        pattern = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d\W]{8,}$"
         if re.match(pattern, password):
             self.password = hashlib.sha256(password.encode('utf-8')).hexdigest()
         else:
