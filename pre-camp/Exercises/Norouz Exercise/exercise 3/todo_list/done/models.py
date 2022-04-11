@@ -5,4 +5,4 @@ class Todo(models.Model):
     Check = models.BooleanField()
 
     def __str__(self) ->str:
-        return self.The_Job
+        return f"{self.The_Job}"
